@@ -83,7 +83,7 @@ showhidepassword.addEventListener("click", () => {
 });
 // if all the user inputs are valid then we can submit the form and it will show success or error message depending upon the user's input or if the existing emailid user tries to again register then it will get existing email id validation error
 const submitbtn = document.querySelector(".submitbtn");
-const detailsform = document.querySelector(".formdesign");
+const detailsform = document.querySelector(".detailsform");
 const formerrormessage = document.getElementById("formerrormessage");
 const formsuccessmessage = document.getElementById("formsuccessmessage");
 const emailiduserexists = document.getElementById("emailiduserexists");
@@ -126,6 +126,7 @@ detailsform.addEventListener("submit", (e) => {
       emailiduserexists.style.display = "none";
     }
     detailsform.reset();
+    location.href = "login.html";
   } else {
     formsuccessmessage.style.display = "none";
     formerrormessage.style.display = "block";

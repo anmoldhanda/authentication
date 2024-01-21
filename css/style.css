@@ -17,7 +17,7 @@ body {
   background: var(--secondarycolor);
 }
 
-.formdesign {
+.detailsform {
   border-radius: 25px;
   border: 1px solid var(--primarycolor);
   background: var(--whitecolor);
@@ -39,7 +39,7 @@ body {
 .inputfields {
   display: block;
   padding: 10px 30px;
-  width: 100%;
+  width: 30vw;
   /* margin: 15px auto; */
   outline: none;
   background: var(--secondarycolor);
@@ -48,7 +48,6 @@ body {
 
 .floating-labels {
   margin: -15px 0 5px 0;
-  width: 100%;
   position: relative;
 }
 
