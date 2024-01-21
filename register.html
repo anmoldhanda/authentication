@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <!-- ==================== fontawesome icons ==================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ==================== custom css ==================== -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="formsubmissionindicator">
+        <p id="formerrormessage">
+          Your form cannot be submitted due to some issues
+        </p>
+        <p id="formsuccessmessage">Thank you for your response</p>
+        <p id="emailiduserexists">This Email ID is already registered</p>
+      </div>
+      <form action="#" method="post" class="formdesign">
+        <h1 class="form-headline">Registeration Form</h1>
+        <div class="floating-labels">
+          <i class="fa fa-user"></i>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your valid name"
+            class="inputfields"
+            id="namefield"
+          />
+          <span class="inputlabels">Name</span>
+          <small id="errorname"></small>
+        </div>
+        <div class="floating-labels">
+          <i class="fa fa-envelope"></i>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your valid email id"
+            class="inputfields"
+            id="emailfield"
+          />
+          <span class="inputlabels">Email ID</span>
+          <small id="erroremail"></small>
+        </div>
+        <div class="floating-labels">
+          <i class="fa fa-phone"></i>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your valid phone number"
+            class="inputfields"
+            id="phonefield"
+          />
+          <span class="inputlabels">Phone No.</span>
+          <small id="errorphone"></small>
+        </div>
+        <div class="floating-labels">
+          <i class="fa fa-lock"></i>
+          <i class="fa fa-eye-slash" id="showhidepassword"></i>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your valid password"
+            class="inputfields"
+            id="passwordfield"
+          />
+          <span class="inputlabels">Password</span>
+          <small id="errorpassword"></small>
+        </div>
+        <button class="submitbtn">
+          <i class="fas fa-paper-plane"></i> send message
+        </button>
+      </form>
+    </div>
+    <!-- ==================== custom js ==================== -->
+    <script src="main.js"></script>
+  </body>
+</html>

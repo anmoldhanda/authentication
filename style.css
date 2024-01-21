@@ -1,0 +1,131 @@
+/* ==================== google fonts ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --primarycolor: #f58290;
+  --secondarycolor: #e2e3f0;
+  --whitecolor: #ffffff;
+}
+
+body {
+  background: var(--secondarycolor);
+}
+
+.formdesign {
+  border-radius: 25px;
+  border: 1px solid var(--primarycolor);
+  background: var(--whitecolor);
+  padding: 2rem;
+  display: block;
+  margin: 1rem auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+}
+
+.form-headline {
+  color: var(--primarycolor);
+  text-align: center;
+}
+
+.inputfields {
+  display: block;
+  padding: 10px 30px;
+  width: 100%;
+  /* margin: 15px auto; */
+  outline: none;
+  background: var(--secondarycolor);
+  /* border: 1px solid var(--primarycolor); */
+}
+
+.floating-labels {
+  margin: -15px 0 5px 0;
+  width: 100%;
+  position: relative;
+}
+
+.floating-labels i {
+  position: relative;
+  bottom: -29px;
+  left: 10px;
+  color: var(--primarycolor);
+}
+
+#showhidepassword {
+  position: absolute;
+  bottom: 2.2em;
+  left: 90%;
+  cursor: pointer;
+}
+
+.submitbtn {
+  color: var(--primarycolor);
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--primarycolor);
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.submitbtn:hover {
+  background: var(--primarycolor);
+  color: var(--whitecolor);
+}
+
+.inputlabels {
+  position: relative;
+  left: 30px;
+  bottom: 4.2em;
+  color: gray;
+  font-weight: normal;
+  font-size: 12px;
+  background: var(--whitecolor);
+}
+
+#namefield.invalid,
+#emailfield.invalid,
+#phonefield.invalid,
+#passwordfield.invalid {
+  border: 1px solid var(--primarycolor);
+}
+
+#errorname,
+#erroremail,
+#errorphone,
+#errorpassword {
+  color: var(--primarycolor);
+  font-weight: bolder;
+  position: absolute;
+  right: 0em;
+}
+/* ========================== form submission notifications ========================== */
+#formsuccessmessage {
+  background: #9ff29f;
+  text-align: center;
+  padding: 10px;
+  color: var(--whitecolor);
+  font-weight: bold;
+  margin: 0 0 1em 0;
+  display: none;
+}
+
+#emailiduserexists,
+#formerrormessage {
+  background: #f491a5;
+  text-align: center;
+  padding: 10px;
+  color: var(--whitecolor);
+  font-weight: bold;
+  margin: 0 0 1em 0;
+  display: none;
+}
