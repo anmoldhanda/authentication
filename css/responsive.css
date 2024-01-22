@@ -1,0 +1,8 @@
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .detailsform {
+    padding: 1em;
+  }
+  .inputfields {
+    width: 80vw;
+  }
+}

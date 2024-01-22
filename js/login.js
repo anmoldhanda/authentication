@@ -83,6 +83,7 @@ detailsform.addEventListener("submit", (e) => {
           );
         }
       );
+      // ================= export and print current logged in user email address =================
       localStorage.setItem("currentusername", storecurrentuserdetails.emailid);
       usernotregistered.style.display = "none";
       location.href = "profile.html";
