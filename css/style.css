@@ -118,6 +118,7 @@ body {
   display: none;
 }
 
+#usernotregistered,
 #emailiduserexists,
 #formerrormessage {
   background: #f491a5;

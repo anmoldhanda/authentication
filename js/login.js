@@ -51,16 +51,48 @@ const detailsform = document.querySelector(".detailsform");
 const formerrormessage = document.getElementById("formerrormessage");
 const formsuccessmessage = document.getElementById("formsuccessmessage");
 const emailiduserexists = document.getElementById("emailiduserexists");
+const usernotregistered = document.getElementById("usernotregistered");
 detailsform.addEventListener("submit", (e) => {
   e.preventDefault();
   if (validemail && validpassword) {
-    formsuccessmessage.style.display = "block";
+    formsuccessmessage.style.display = "none";
     formerrormessage.style.display = "none";
     console.log("ok");
+    // ================= store user's login details in localstorage =================
+    let storeemail = emailfield.value;
+    let storepassword = passwordfield.value;
+    // ================= retrieve user's login details from localstorage =================
+    let formdatabase = new Array();
+    formdatabase = JSON.parse(localStorage.getItem("formdata"))
+      ? JSON.parse(localStorage.getItem("formdata"))
+      : [];
+    // ================= check if the user's email & password is registered with us =================
+    if (
+      formdatabase.some((registereduser) => {
+        return (
+          registereduser.emailid === storeemail &&
+          registereduser.password === storepassword
+        );
+      })
+    ) {
+      let storecurrentuserdetails = formdatabase.filter(
+        (currentuserdetails) => {
+          return (
+            currentuserdetails.emailid === storeemail &&
+            currentuserdetails.password === storepassword
+          );
+        }
+      );
+      localStorage.setItem("currentusername", storecurrentuserdetails.emailid);
+      usernotregistered.style.display = "none";
+      location.href = "profile.html";
+    } else {
+      usernotregistered.style.display = "block";
+    }
     detailsform.reset();
   } else {
     formsuccessmessage.style.display = "none";
-    formerrormessage.style.display = "block";
+    formerrormessage.style.display = "none";
     detailsform.reset();
     console.log("not ok");
   }
