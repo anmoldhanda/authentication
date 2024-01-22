@@ -52,6 +52,13 @@ const formerrormessage = document.getElementById("formerrormessage");
 const formsuccessmessage = document.getElementById("formsuccessmessage");
 const emailiduserexists = document.getElementById("emailiduserexists");
 const usernotregistered = document.getElementById("usernotregistered");
+// if the user hasn't logged out from the profile then without logging out user can't see the login page
+let currentloggedinuser = localStorage.getItem("currentusername")
+  ? localStorage.getItem("currentusername")
+  : "";
+if (currentloggedinuser != "") {
+  location.href = "profile.html";
+}
 detailsform.addEventListener("submit", (e) => {
   e.preventDefault();
   if (validemail && validpassword) {
@@ -75,16 +82,16 @@ detailsform.addEventListener("submit", (e) => {
         );
       })
     ) {
-      let storecurrentuserdetails = formdatabase.filter(
-        (currentuserdetails) => {
-          return (
-            currentuserdetails.emailid === storeemail &&
-            currentuserdetails.password === storepassword
-          );
-        }
-      );
+      let storecurrentuserdetails = formdatabase.find((currentuserdetails) => {
+        return (
+          currentuserdetails.emailid === storeemail &&
+          currentuserdetails.password === storepassword
+        );
+      });
       // ================= export and print current logged in user email address =================
-      localStorage.setItem("currentusername", storecurrentuserdetails.emailid);
+      if (storecurrentuserdetails) {
+        localStorage.setItem("currentusername", storecurrentuserdetails.name);
+      }
       usernotregistered.style.display = "none";
       location.href = "profile.html";
     } else {
