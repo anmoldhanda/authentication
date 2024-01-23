@@ -13,14 +13,9 @@
   --whitecolor: #ffffff;
 }
 
-body {
-  background: var(--secondarycolor);
-}
-
 .detailsform {
-  border-radius: 25px;
-  border: 1px solid var(--primarycolor);
-  background: var(--whitecolor);
+  border-radius: 1.2rem;
+  background: transparent;
   padding: 2rem;
   display: block;
   margin: 1rem auto;
@@ -29,6 +24,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
+  box-shadow: 0 2rem 3rem #c7cbf2;
 }
 
 .form-headline {
@@ -128,4 +124,16 @@ body {
   font-weight: bold;
   margin: 0 0 1em 0;
   display: none;
+}
+
+.loginregisterpagemessage {
+  color: var(--primarycolor);
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.pagelink {
+  text-decoration: none;
+  color: var(--primarycolor);
 }

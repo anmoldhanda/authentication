@@ -1,8 +1,119 @@
+@media only screen and (min-width: 50px) and (max-width: 319px) {
+  .detailsform {
+    padding: 1em;
+  }
+  .inputfields {
+    width: 85vw;
+  }
+  .form-headline {
+    font-size: 1.5em;
+  }
+  #errorname,
+  #erroremail,
+  #errorphone,
+  #errorpassword {
+    white-space: nowrap;
+    font-size: 0.77em;
+  }
+  #usernotregistered,
+  #emailiduserexists,
+  #formerrormessage {
+    padding: 5px;
+  }
+  .loginregisterpagemessage {
+    font-size: 0.8em;
+  }
+  .submitbtn {
+    margin: 0.5em 0;
+  }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .detailsform {
     padding: 1em;
   }
   .inputfields {
-    width: 80vw;
+    width: 85vw;
+  }
+  .form-headline {
+    font-size: 1.5em;
+  }
+  #errorname,
+  #erroremail,
+  #errorphone,
+  #errorpassword {
+    white-space: nowrap;
+    font-size: 0.77em;
+  }
+  #usernotregistered,
+  #emailiduserexists,
+  #formerrormessage {
+    padding: 5px;
+  }
+  .loginregisterpagemessage {
+    font-size: 0.8em;
+  }
+  .submitbtn {
+    margin: 0.5em 0;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .detailsform {
+    padding: 1em;
+  }
+  .inputfields {
+    width: 50vw;
+  }
+  .form-headline {
+    font-size: 1.5em;
+  }
+  #errorname,
+  #erroremail,
+  #errorphone,
+  #errorpassword {
+    white-space: nowrap;
+    font-size: 0.77em;
+  }
+  #usernotregistered,
+  #emailiduserexists,
+  #formerrormessage {
+    padding: 5px;
+  }
+  .loginregisterpagemessage {
+    font-size: 0.8em;
+  }
+  .submitbtn {
+    margin: 0.5em 0;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .detailsform {
+    padding: 1em;
+  }
+  .inputfields {
+    width: 50vw;
+  }
+  .form-headline {
+    font-size: 1.5em;
+  }
+  #errorname,
+  #erroremail,
+  #errorphone,
+  #errorpassword {
+    white-space: nowrap;
+    font-size: 0.77em;
+  }
+  #usernotregistered,
+  #emailiduserexists,
+  #formerrormessage {
+    padding: 5px;
+  }
+  .loginregisterpagemessage {
+    font-size: 0.8em;
+  }
+  .submitbtn {
+    margin: 0.5em 0;
   }
 }

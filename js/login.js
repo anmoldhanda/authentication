@@ -62,7 +62,7 @@ if (currentloggedinuser != "") {
 detailsform.addEventListener("submit", (e) => {
   e.preventDefault();
   if (validemail && validpassword) {
-    formsuccessmessage.style.display = "none";
+    formsuccessmessage.style.display = "block";
     formerrormessage.style.display = "none";
     console.log("ok");
     // ================= store user's login details in localstorage =================
@@ -93,14 +93,18 @@ detailsform.addEventListener("submit", (e) => {
         localStorage.setItem("currentusername", storecurrentuserdetails.name);
       }
       usernotregistered.style.display = "none";
+      formsuccessmessage.style.display = "block";
       location.href = "profile.html";
     } else {
+      // ================= user is registered with us so the user can't log in =================
       usernotregistered.style.display = "block";
+      formerrormessage.style.display = "none";
+      formsuccessmessage.style.display = "none";
     }
     detailsform.reset();
   } else {
     formsuccessmessage.style.display = "none";
-    formerrormessage.style.display = "none";
+    formerrormessage.style.display = "block";
     detailsform.reset();
     console.log("not ok");
   }
