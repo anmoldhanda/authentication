@@ -179,3 +179,17 @@
   text-transform: capitalize;
   margin: 1em 0;
 }
+
+.profilepicbox {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.profilepic {
+  height: 30%;
+  width: 30%;
+  object-fit: cover;
+  border-radius: 50px;
+  border: 2px solid var(--primarycolor);
+  padding: 5px;
+}
