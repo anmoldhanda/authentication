@@ -90,10 +90,7 @@ detailsform.addEventListener("submit", (e) => {
       });
       // ================= export and print current logged in user email address =================
       if (storecurrentuserdetails) {
-        localStorage.setItem(
-          "currentusername",
-          storecurrentuserdetails.name
-        );
+        localStorage.setItem("currentusername", storecurrentuserdetails.name);
       }
       usernotregistered.style.display = "none";
       formsuccessmessage.style.display = "block";

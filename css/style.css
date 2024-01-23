@@ -163,12 +163,13 @@
 }
 
 .profilecontainer {
-  border: 2px dashed var(--primarycolor);
-  padding: 1em;
+  padding: 1em 2em;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  background: transparent;
+  box-shadow: 0 2rem 3rem #c7cbf2;
 }
 
 #currentuser {
