@@ -1,10 +1,11 @@
 const currentuser = document.getElementById("currentuser");
 const logoutcurrentuserbtn = document.getElementById("logoutcurrentuserbtn");
 // when the user logged in and stored its credentials then redirect the user to profile page
+// decrypting the user's login credentials using localstorage's atob() method
 let currentloggedinuser = localStorage.getItem("currentusername")
   ? localStorage.getItem("currentusername")
   : "";
-currentuser.innerHTML = currentloggedinuser;
+currentuser.innerHTML = atob(currentloggedinuser);
 if (currentloggedinuser == "") {
   location.href = "login.html";
 }

@@ -65,9 +65,9 @@ detailsform.addEventListener("submit", (e) => {
     formsuccessmessage.style.display = "block";
     formerrormessage.style.display = "none";
     console.log("ok");
-    // ================= store user's login details in localstorage =================
-    let storeemail = emailfield.value;
-    let storepassword = passwordfield.value;
+    // ================= store user's login details in localstorage in encrypted form using btoa() localstorage method =================
+    let storeemail = btoa(emailfield.value);
+    let storepassword = btoa(passwordfield.value);
     // ================= retrieve user's login details from localstorage =================
     let formdatabase = new Array();
     formdatabase = JSON.parse(localStorage.getItem("formdata"))
@@ -90,7 +90,10 @@ detailsform.addEventListener("submit", (e) => {
       });
       // ================= export and print current logged in user email address =================
       if (storecurrentuserdetails) {
-        localStorage.setItem("currentusername", storecurrentuserdetails.name);
+        localStorage.setItem(
+          "currentusername",
+          storecurrentuserdetails.name
+        );
       }
       usernotregistered.style.display = "none";
       formsuccessmessage.style.display = "block";

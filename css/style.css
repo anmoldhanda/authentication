@@ -28,8 +28,17 @@
 }
 
 .form-headline {
-  color: var(--primarycolor);
-  text-align: center;
+  width: fit-content;
+  margin: 0.4em auto;
+}
+
+.form-headline::after {
+  content: "";
+  background-color: var(--primarycolor);
+  height: 3px;
+  width: 3em;
+  display: block;
+  margin: 0.1em auto;
 }
 
 .inputfields {
@@ -68,6 +77,7 @@
   padding: 5px 10px;
   border-radius: 6px;
   border: 1px solid var(--primarycolor);
+  margin: 1em 0;
   transition: all 300ms ease;
   cursor: pointer;
 }
@@ -127,13 +137,44 @@
 }
 
 .loginregisterpagemessage {
-  color: var(--primarycolor);
+  color: #000;
   text-align: center;
   font-weight: bold;
   text-transform: capitalize;
+  position: relative;
+  font-size: 0.9em;
 }
 
 .pagelink {
   text-decoration: none;
-  color: var(--primarycolor);
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.pagelink::after {
+  content: "";
+  display: inline-block;
+  background-color: var(--primarycolor);
+  height: 3px;
+  width: 1em;
+  position: absolute;
+  top: 1.3em;
+  right: 6em;
+}
+
+.profilecontainer {
+  border: 2px dashed var(--primarycolor);
+  padding: 1em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#currentuser {
+  background: var(--primarycolor);
+  color: var(--whitecolor);
+  text-align: center;
+  text-transform: capitalize;
+  margin: 1em 0;
 }

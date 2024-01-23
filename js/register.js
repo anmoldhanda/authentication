@@ -93,11 +93,11 @@ detailsform.addEventListener("submit", (e) => {
     formsuccessmessage.style.display = "block";
     formerrormessage.style.display = "none";
     console.log("ok");
-    // ================= store user's details in localstorage =================
-    let storename = namefield.value;
-    let storeemail = emailfield.value;
-    let storephone = phonefield.value;
-    let storepassword = passwordfield.value;
+    // ================= store user's details in localstorage in encrypted form using btoa() localstorage method =================
+    let storename = btoa(namefield.value);
+    let storeemail = btoa(emailfield.value);
+    let storephone = btoa(phonefield.value);
+    let storepassword = btoa(passwordfield.value);
     // ================= retrieve user's details from localstorage =================
     let formdatabase = new Array();
     formdatabase = JSON.parse(localStorage.getItem("formdata"))
