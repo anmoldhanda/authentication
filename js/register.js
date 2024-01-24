@@ -12,7 +12,7 @@ let validemail = false;
 let validphone = false;
 let validpassword = false;
 namefield.addEventListener("blur", (e) => {
-  let regex = /^([a-zA-Z]){1,30}$/;
+  let regex = /^([a-zA-Z]\s*){1,30}$/;
   let name = namefield.value;
   if (regex.test(name)) {
     console.log(`valid name`);
