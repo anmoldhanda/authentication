@@ -100,8 +100,9 @@ detailsform.addEventListener("submit", (e) => {
     let storepassword = btoa(passwordfield.value);
     // ================= retrieve user's details from localstorage =================
     let formdatabase = new Array();
-    formdatabase = JSON.parse(localStorage.getItem("formdata"))
-      ? JSON.parse(localStorage.getItem("formdata"))
+    // ================= we've passed the encrypted key of localstorage because we don't want to reveal the key to the client side but it will works the same and it will return the localstorage's value =================
+    formdatabase = JSON.parse(localStorage.getItem("Zm9ybWRhdGE="))
+      ? JSON.parse(localStorage.getItem("Zm9ybWRhdGE="))
       : [];
     // ================= check for duplicate entries of user's existing email address =================
     if (
@@ -119,8 +120,9 @@ detailsform.addEventListener("submit", (e) => {
         password: storepassword,
       };
       formdatabase.push(formdataentry);
+      // ================= encrypted the localstorage's key =================
       let storeformdata = localStorage.setItem(
-        "formdata",
+        btoa("formdata"),
         JSON.stringify(formdatabase)
       );
       emailiduserexists.style.display = "none";

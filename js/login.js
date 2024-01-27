@@ -53,8 +53,9 @@ const formsuccessmessage = document.getElementById("formsuccessmessage");
 const emailiduserexists = document.getElementById("emailiduserexists");
 const usernotregistered = document.getElementById("usernotregistered");
 // if the user hasn't logged out from the profile then without logging out user can't see the login page
-let currentloggedinuser = localStorage.getItem("currentusername")
-  ? localStorage.getItem("currentusername")
+// ================= we've passed the encrypted key of localstorage because we don't want to reveal the key to the client side but it will works the same and it will return the localstorage's value =================
+let currentloggedinuser = localStorage.getItem("Y3VycmVudHVzZXJuYW1l")
+  ? localStorage.getItem("Y3VycmVudHVzZXJuYW1l")
   : "";
 if (currentloggedinuser != "") {
   location.href = "profile.html";
@@ -70,8 +71,9 @@ detailsform.addEventListener("submit", (e) => {
     let storepassword = btoa(passwordfield.value);
     // ================= retrieve user's login details from localstorage =================
     let formdatabase = new Array();
-    formdatabase = JSON.parse(localStorage.getItem("formdata"))
-      ? JSON.parse(localStorage.getItem("formdata"))
+    // ================= we've passed the encrypted key of localstorage because we don't want to reveal the key to the client side but it will works the same and it will return the localstorage's value =================
+    formdatabase = JSON.parse(localStorage.getItem("Zm9ybWRhdGE="))
+      ? JSON.parse(localStorage.getItem("Zm9ybWRhdGE="))
       : [];
     // ================= check if the user's email & password is registered with us =================
     if (
@@ -90,7 +92,11 @@ detailsform.addEventListener("submit", (e) => {
       });
       // ================= export and print current logged in user email address =================
       if (storecurrentuserdetails) {
-        localStorage.setItem("currentusername", storecurrentuserdetails.name);
+        // ================= encrypted the localstorage's key =================
+        localStorage.setItem(
+          btoa("currentusername"),
+          storecurrentuserdetails.name
+        );
       }
       usernotregistered.style.display = "none";
       formsuccessmessage.style.display = "block";

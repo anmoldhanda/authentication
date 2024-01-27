@@ -2,8 +2,8 @@ const currentuser = document.getElementById("currentuser");
 const logoutcurrentuserbtn = document.getElementById("logoutcurrentuserbtn");
 // when the user logged in and stored its credentials then redirect the user to profile page
 // decrypting the user's login credentials using localstorage's atob() method
-let currentloggedinuser = localStorage.getItem("currentusername")
-  ? localStorage.getItem("currentusername")
+let currentloggedinuser = localStorage.getItem("Y3VycmVudHVzZXJuYW1l")
+  ? localStorage.getItem("Y3VycmVudHVzZXJuYW1l")
   : "";
 currentuser.innerHTML = atob(currentloggedinuser);
 if (currentloggedinuser == "") {
@@ -12,5 +12,6 @@ if (currentloggedinuser == "") {
 // if the user clicks on the logout button then remove its login credentials and redirect to login page
 logoutcurrentuserbtn.addEventListener("click", () => {
   location.href = "login.html";
-  localStorage.removeItem("currentusername");
+  // localstorage's encrypted key is being deleted
+  localStorage.removeItem("Y3VycmVudHVzZXJuYW1l");
 });
