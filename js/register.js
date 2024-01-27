@@ -124,9 +124,10 @@ detailsform.addEventListener("submit", (e) => {
         JSON.stringify(formdatabase)
       );
       emailiduserexists.style.display = "none";
+      location.href = "login.html";
+      detailsform.reset();
     }
     detailsform.reset();
-    location.href = "login.html";
   } else {
     formsuccessmessage.style.display = "none";
     formerrormessage.style.display = "block";
