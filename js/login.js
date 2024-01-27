@@ -75,7 +75,7 @@ detailsform.addEventListener("submit", (e) => {
     formdatabase = JSON.parse(localStorage.getItem("Zm9ybWRhdGE="))
       ? JSON.parse(localStorage.getItem("Zm9ybWRhdGE="))
       : [];
-    // ================= check if the user's email & password is registered with us =================
+    // ================= check if the user's email & password is registered with us or not =================
     if (
       formdatabase.some((registereduser) => {
         return (
@@ -84,6 +84,7 @@ detailsform.addEventListener("submit", (e) => {
         );
       })
     ) {
+      // ================= user is registered with us so then store user's login credentials and redirect to profile page and make him logged in to portal  =================
       let storecurrentuserdetails = formdatabase.find((currentuserdetails) => {
         return (
           currentuserdetails.emailid === storeemail &&
@@ -102,7 +103,7 @@ detailsform.addEventListener("submit", (e) => {
       formsuccessmessage.style.display = "block";
       location.href = "profile.html";
     } else {
-      // ================= user is registered with us so the user can't log in =================
+      // ================= user is not registered with us so the user can't log in & we've haven't stored its login credentials=================
       usernotregistered.style.display = "block";
       formerrormessage.style.display = "none";
       formsuccessmessage.style.display = "none";
